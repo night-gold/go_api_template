@@ -12,10 +12,8 @@ func LoggingLevel(lvl string) zerolog.Logger{
 	switch lvl {
 		case "debug":
 			infos = zerolog.New(os.Stdout).With().Timestamp().Logger()
-			infos.Info().Msg("Server is starting.")
 		case "infos":
 			infos = zerolog.New(os.Stdout).With().Timestamp().Logger()
-			infos.Info().Msg("Server is starting.")
 	}
 
 	return infos
