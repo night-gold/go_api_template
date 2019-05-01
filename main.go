@@ -1,4 +1,4 @@
-package api
+package main
 
 import (
 	"os"
@@ -10,7 +10,7 @@ import (
 )
 
 func init(){
-	//var infos zerolog.Logger
+ 	//var infos zerolog.Logger
 	errors := zerolog.New(os.Stderr).With().Timestamp().Logger()
 
 	// Loglevel contains the LogLevel defined in the env variable, it will define the global loglevel and the log variables associated to output.
@@ -36,7 +36,7 @@ func init(){
 			zerolog.SetGlobalLevel(zerolog.PanicLevel)
 	}
 	
-	errors.Error().Msg("What an error") //declare message in error for starting http server
+	errors.Error().Msg("What an error")//declare message in error for starting http server
 }
 
 func main(){

@@ -1,2 +1,5 @@
-#Ignoring vendor folder from commit
+# Ignoring vendor folder from commit
 vendor/
+
+# Ignoring builded package.
+go_api_template.exe
