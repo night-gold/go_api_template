@@ -12,8 +12,18 @@ func LoggingLevel(lvl string) zerolog.Logger{
 	switch lvl {
 		case "debug":
 			infos = zerolog.New(os.Stdout).With().Timestamp().Logger()
+			zerolog.SetGlobalLevel(zerolog.DebugLevel)
 		case "infos":
 			infos = zerolog.New(os.Stdout).With().Timestamp().Logger()
+			zerolog.SetGlobalLevel(zerolog.InfoLevel)
+		case "warning":
+			zerolog.SetGlobalLevel(zerolog.WarnLevel)
+		case "error":
+			zerolog.SetGlobalLevel(zerolog.ErrorLevel)
+		case "fatal":
+			zerolog.SetGlobalLevel(zerolog.FatalLevel)
+		case "panic":
+			zerolog.SetGlobalLevel(zerolog.PanicLevel)
 	}
 
 	return infos
