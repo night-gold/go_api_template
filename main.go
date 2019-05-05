@@ -2,12 +2,14 @@ package main
 
 import (
 	"os"
-	"fmt"
 
 	"github.com/rs/zerolog"
 	_ "github.com/rs/zerolog/log"
 	"github.com/night-gold/go_api_template/logger"
+
 	"github.com/night-gold/go_api_template/utils"
+
+	"github.com/night-gold/go_api_template/server"
 )
 
 var infos zerolog.Logger
@@ -27,6 +29,5 @@ func init(){
 }
 
 func main(){
-	errors.Error().Msg("What an error")//declare message in error for starting http server
-	fmt.Println("test")
+	r := server.NewServer(infos, errors)
 }
