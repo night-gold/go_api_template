@@ -4,12 +4,13 @@ import (
 	"os"
 
 	"github.com/rs/zerolog"
-	_ "github.com/rs/zerolog/log"
+	//_ "github.com/rs/zerolog/log"
 	"github.com/night-gold/go_api_template/logger"
 
 	"github.com/night-gold/go_api_template/utils"
 
 	"github.com/night-gold/go_api_template/server"
+	_ "net/http"
 )
 
 var infos zerolog.Logger
@@ -30,4 +31,5 @@ func init(){
 
 func main(){
 	r := server.NewServer(infos, errors)
+	r.HandleFunc("/healthz", server.Healthz)
 }
